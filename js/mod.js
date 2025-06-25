@@ -43,6 +43,7 @@ function getPointGen() {
 
 	let gain = new Decimal(0)
 	if (hasUpgrade('layer_mana', 11)) gain = gain.plus(1)
+	if (hasUpgrade('layer_mana', 12)) gain = gain.times(1.5)
 	return gain
 }
 

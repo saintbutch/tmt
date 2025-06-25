@@ -15,6 +15,7 @@ addLayer("layer_mana", {
     exponent: 0.5, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
+        if (hasUpgrade('layer_mana', 1e)) gain = gain.times(1.5)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -28,9 +29,21 @@ addLayer("layer_mana", {
     upgrades: {
 	    11: {
 		    title: "Droplet of Mana",
-		    description: "Consume condensed Mana to begin producing raw Thaums.",
+		    description: "Sure, it's 'not safe' and 'boneheadedly foolish' to consume processed mana, but how else are you supposed to generate raw Thaums?",
 		    cost: new Decimal(1),
 	    },
+        12: {
+            title: "Basic Thaumonomics",
+            description: "Mana naturally breaks down into Thaums. The more you consume, the more you'll attract raw energy.",
+            cost: new Decimal(2),
+        },
+        13: {
+            title: "Recursive Condensation",
+            description: "Like attracts like. Channeling Mana into more Mana must improve the overall rate.",
+            cost: new Decimal(10)
+        }
+
+        }
 		    
 
     }
