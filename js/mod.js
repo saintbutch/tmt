@@ -1,6 +1,6 @@
 let modInfo = {
-	name: "The ??? Tree",
-	author: "nobody",
+	name: "wizard game",
+	author: "briar!",
 	pointsName: "thaums",
 	modFiles: ["layers.js", "tree.js"],
 
@@ -41,7 +41,8 @@ function getPointGen() {
 	if(!canGenPoints())
 		return new Decimal(0)
 
-	let gain = new Decimal(1)
+	let gain = new Decimal(0)
+	if (hasUpgrade('layer_mana', 11)) gain = gain.plus(1)
 	return gain
 }
 
