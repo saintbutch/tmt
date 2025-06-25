@@ -14,8 +14,8 @@ addLayer("layer_mana", {
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.5, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
-        mult = new Decimal(1),
-		if (hasUpgrade('layer_mana', 11)) gain = gain.times(1.1),
+        mult = new Decimal(0),
+		if (hasUpgrade('layer_mana', 11)) gain = gain.add(1),
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -23,7 +23,7 @@ addLayer("layer_mana", {
     },
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
-        {key: "mana", description: "M: Condense raw Thaums into usable Mana.", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+        {key: "M", description: "M: Condense raw Thaums into usable Mana.", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
     upgrades: {
