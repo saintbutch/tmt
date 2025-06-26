@@ -27,21 +27,26 @@ addLayer("layer_mana", {
     ],
     layerShown(){return true},
     upgrades: {
-	    11: {
-		    title: "Droplet of Mana",
-		    description: "Sure, it's 'not safe' and 'boneheadedly foolish' to consume processed mana, but how else are you supposed to generate raw Thaums?",
-		    cost: new Decimal(1),
+	11: {
+		title: "Droplet of Mana",
+		description: "Sure, it's 'not safe' to consume processed mana, but how else are you supposed to generate raw Thaums?",
+		cost: new Decimal(1),
 	    },
         12: {
-            title: "Basic Thaumonomics",
-            description: "Mana naturally breaks down into Thaums. The more you consume, the more you'll attract raw energy.",
-            cost: new Decimal(2),
+		title: "Basic Thaumonomics",
+		description: "Mana naturally breaks down into Thaums. The more you consume, the more you'll attract raw energy.",
+		cost: new Decimal(2),
         },
         13: {
-            title: "Recursive Condensation",
-            description: "Like attracts like. Channeling Mana into more Mana must improve the overall rate.",
-            cost: new Decimal(10)
-        }
+		title: "Recursive Condensation",
+		description: "Like attracts like. Channeling Mana into more Mana must improve the overall rate.",
+		cost: new Decimal(3)
+        },
+	14: {
+	    title: "Expand Pool",
+	    description: "It's time to get serious.",
+	    cost: new Decimal (5)
+	},
 
         
 		    
